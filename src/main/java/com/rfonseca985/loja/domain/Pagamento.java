@@ -3,6 +3,7 @@ package com.rfonseca985.loja.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rfonseca985.loja.domain.enums.EstadoPagamento;
 
 import jakarta.persistence.Entity;
@@ -22,6 +23,7 @@ public abstract class Pagamento implements Serializable{
 	private Integer id;
 	private Integer estado;
 	
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
