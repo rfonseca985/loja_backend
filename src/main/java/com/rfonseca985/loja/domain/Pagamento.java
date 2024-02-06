@@ -3,6 +3,7 @@ package com.rfonseca985.loja.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rfonseca985.loja.domain.enums.EstadoPagamento;
 
