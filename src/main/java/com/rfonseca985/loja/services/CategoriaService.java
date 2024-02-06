@@ -1,8 +1,8 @@
 package com.rfonseca985.loja.services;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.rfonseca985.loja.CategoriaDTO;
+import com.rfonseca985.loja.domain.Categoria;
+import com.rfonseca985.loja.repositories.CategoriaRepository;
 import com.rfonseca985.loja.services.exceptions.DataIntegrityException;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +12,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import com.rfonseca985.loja.domain.Categoria;
-import com.rfonseca985.loja.repositories.CategoriaRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoriaService {
@@ -51,6 +51,10 @@ public class CategoriaService {
 	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
+	}
+
+	public Categoria fromDTO(CategoriaDTO objDTO){
+		return new Categoria(objDTO.getId(),objDTO.getNome());
 	}
 }
 
