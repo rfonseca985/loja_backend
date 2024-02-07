@@ -1,19 +1,11 @@
 package com.rfonseca985.loja.domain;
 
-import java.io.Serializable;
-import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rfonseca985.loja.domain.enums.EstadoPagamento;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
+import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -37,7 +29,7 @@ public abstract class Pagamento implements Serializable{
 	public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
 		super();
 		this.id = id;
-		this.estado = estado.getCod();
+		this.estado = (estado== null ? null : estado.getCod());
 		this.pedido = pedido;
 	}
 
