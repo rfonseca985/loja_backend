@@ -1,4 +1,4 @@
-package com.rfonseca985.loja;
+package com.rfonseca985.loja.DTO;
 
 import com.rfonseca985.loja.domain.Categoria;
 import org.hibernate.validator.constraints.Length;

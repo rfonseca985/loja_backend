@@ -1,23 +1,11 @@
 package com.rfonseca985.loja.domain;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rfonseca985.loja.domain.enums.TipoCliente;
+import jakarta.persistence.*;
 
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import java.io.Serializable;
+import java.util.*;
 
 @Entity
 public class Cliente implements Serializable{
@@ -53,7 +41,7 @@ public class Cliente implements Serializable{
 		this.nome = nome;
 		this.email = email;
 		this.cpfOuCnpj = cpfOuCnpj;
-		this.tipo = tipo.getCod();
+		this.tipo = (tipo==null)? null : tipo.getCod();
 	}
 
 	public Integer getId() {

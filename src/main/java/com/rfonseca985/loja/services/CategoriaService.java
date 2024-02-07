@@ -1,6 +1,6 @@
 package com.rfonseca985.loja.services;
 
-import com.rfonseca985.loja.CategoriaDTO;
+import com.rfonseca985.loja.DTO.CategoriaDTO;
 import com.rfonseca985.loja.domain.Categoria;
 import com.rfonseca985.loja.repositories.CategoriaRepository;
 import com.rfonseca985.loja.services.exceptions.DataIntegrityException;

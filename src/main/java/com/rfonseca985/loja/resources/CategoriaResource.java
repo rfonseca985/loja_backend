@@ -4,7 +4,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.rfonseca985.loja.CategoriaDTO;
+import com.rfonseca985.loja.DTO.CategoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
